@@ -1,0 +1,6 @@
+#!/bin/bash
+if ! [ -z "$1" ] ; then
+    docker run --rm -d --privileged -it -v $(pwd)/ctf:/ctf/yu1hpa -w="/ctf/yu1hpa" --name pwndocker$1 pwndocker:$1
+else
+    echo "Usage $0 <libc-version>"
+fi
