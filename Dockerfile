@@ -17,7 +17,11 @@ RUN apt-get update && \
 # pwntools
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install setuptools \
-    && pip3 install pwntools
+    && pip3 install \
+    pwntools \
+    capstone \
+    ropgadget \
+    ropper \
 
 # gef
 RUN pip3 install keystone-engine \
