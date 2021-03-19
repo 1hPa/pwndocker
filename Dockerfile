@@ -8,6 +8,8 @@ RUN apt-get update && \
     curl \
     python3-dev \
     python3-pip \
+    ruby \
+    ruby-dev \
     gdb \
     vim \
     file \
@@ -22,6 +24,8 @@ RUN python3 -m pip install --upgrade pip \
     capstone \
     ropgadget \
     ropper \
+
+RUN gem install one_gadget
 
 # gef
 RUN pip3 install keystone-engine \
