@@ -24,7 +24,7 @@ RUN python3 -m pip install --upgrade pip \
     pwntools \
     capstone \
     ropgadget \
-    ropper \
+    ropper
 
 RUN gem install one_gadget
 
