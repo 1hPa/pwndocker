@@ -22,3 +22,8 @@ docker kill :
 - [ROPgadget](https://github.com/JonathanSalwan/ROPgadget)
 - [one_gadget](https://github.com/david942j/one_gadget)
 - [ropper](https://github.com/sashs/Ropper)
+
+### include commands
+- [curl](https://github.com/curl/curl)
+- [vim](https://github.com/vim/vim)
+- [file](https://github.com/file/file)
