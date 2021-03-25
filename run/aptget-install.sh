@@ -4,6 +4,7 @@ apt-get install -y --no-install-recommends \
 libc6-dbg \
 libc6-dbg:i386 \
 gcc-multilib \
+locales \
 curl \
 python3-dev \
 python3-pip \

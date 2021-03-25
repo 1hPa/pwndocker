@@ -6,6 +6,8 @@ COPY ./run/aptget-install.sh aptget-install.sh
 RUN chmod +x aptget-install.sh
 RUN ./aptget-install.sh
 
+ENV LANG en_US.utf8
+
 COPY ./run/pwncmd.sh pwncmd.sh
 RUN chmod +x pwncmd.sh
 RUN ./pwncmd.sh
