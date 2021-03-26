@@ -6,6 +6,7 @@ COPY ./run/aptget-install.sh aptget-install.sh
 RUN chmod +x aptget-install.sh
 RUN ./aptget-install.sh
 
+RUN locale-gen en_US.UTF-8
 ENV LANG en_US.utf8
 
 COPY ./run/pwncmd.sh pwncmd.sh
