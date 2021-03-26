@@ -6,6 +6,7 @@ libc6-dbg:i386 \
 gcc-multilib \
 locales \
 curl \
+wget \
 python3-dev \
 python3-pip \
 ruby \
