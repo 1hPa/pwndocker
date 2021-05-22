@@ -14,5 +14,6 @@ ruby-dev \
 gdb \
 vim \
 file \
+patchelf \
 && rm -rf /var/lib/apt/lists/* \
 && apt-get clean
