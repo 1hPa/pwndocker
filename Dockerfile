@@ -2,22 +2,39 @@ FROM ubuntu:20.04
 
 RUN dpkg --add-architecture i386
 
-COPY ./run/aptget-install.sh aptget-install.sh
-RUN chmod +x aptget-install.sh
-RUN ./aptget-install.sh
+RUN apt-get update && \
+apt-get install -y --no-install-recommends \
+libc6-dbg \
+libc6-dbg:i386 \
+gcc-multilib \
+locales \
+curl \
+wget \
+python3-dev \
+python3-pip \
+ruby \
+ruby-dev \
+gdb \
+vim \
+file \
+patchelf \
+make \
+&& rm -rf /var/lib/apt/lists/* \
+&& apt-get cleanRUN locale-gen en_US.UTF-8
 
-RUN locale-gen en_US.UTF-8
 ENV LANG en_US.utf8
 
-COPY ./run/pwncmd.sh pwncmd.sh
-RUN chmod +x pwncmd.sh
-RUN ./pwncmd.sh
+RUN python3 -m pip install --upgrade pip \
+&& python3 -m pip install setuptools \
+&& pip3 install \
+pwntools \
+capstone \
+ropgadget \
+ropper
 
-RUN mkdir -p $HOME/gef \
+gem install one_gadgetRUN mkdir -p $HOME/gef \
     && cd $HOME/gef
-COPY ./run/debugger-install.sh debugger-install.sh
-RUN chmod +x debugger-install.sh
-RUN ./debugger-install.sh
+RUN wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 
 RUN echo 'export PS1="[\[\e[34m\]\u\[\e[0m\]@\[\e[33m\]\H\[\e[0m\]:\w]\$"' >> /root/.bashrc
 
