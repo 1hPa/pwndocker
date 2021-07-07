@@ -19,6 +19,7 @@ vim \
 file \
 patchelf \
 make \
+git \
 && rm -rf /var/lib/apt/lists/* \
 && apt-get cleanRUN locale-gen en_US.UTF-8
 
