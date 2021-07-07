@@ -21,7 +21,9 @@ patchelf \
 make \
 git \
 && rm -rf /var/lib/apt/lists/* \
-&& apt-get cleanRUN locale-gen en_US.UTF-8
+&& apt-get clean
+
+RUN locale-gen en_US.UTF-8
 
 ENV LANG en_US.utf8
 
@@ -33,7 +35,8 @@ capstone \
 ropgadget \
 ropper
 
-gem install one_gadgetRUN mkdir -p $HOME/gef \
+RUN gem install one_gadget
+RUN mkdir -p $HOME/gef \
     && cd $HOME/gef
 RUN wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 
